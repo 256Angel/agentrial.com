@@ -101,14 +101,25 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 380px;       /* ancho máximo del chat */
-  max-width: 90vw;    /* que no se rompa en pantallas chicas */
+  width: 380px;       /* ancho de la ventana del chat */
+  max-width: 90vw;    /* para móviles */
   z-index: 9999;
 }
+
+/* Fuerza al contenedor interno del widget a respetar nuestro tamaño */
 #aihub-chat > div {
+  position: relative !important;
   width: 100% !important;
   max-width: 100% !important;
+  height: 480px !important;
+  right: auto !important;
+  left: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
 }
+
 
 
   </style>
@@ -182,6 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
+
 
 
 
