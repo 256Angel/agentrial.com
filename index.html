@@ -97,25 +97,35 @@
     .gallery img:hover {
       transform: scale(1.05);
     }
-/* Capa raíz para el chat: ocupa toda la pantalla pero no intercepta clics */
+/* Capa raíz transparente */
 #aihub-chat {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  pointer-events: none;   /* los clics pasan de largo salvo en el widget */
+  pointer-events: none;
   z-index: 9999;
 }
 
-/* Contenedor real del widget de Serenity */
-#aihub-chat .serenity-chat-container {
+/* El custom element que pinta Serenity */
+#aihub-chat aihub-chat {
   position: absolute !important;
   bottom: 20px !important;
   right: 20px !important;
   width: 380px !important;
+  height: 480px !important;
   max-width: 90vw !important;
-  pointer-events: auto;   /* acá sí aceptamos clics */
+  pointer-events: auto;          /* acá sí aceptamos clics */
+  background: transparent !important;
+}
+
+/* Wrapper y container internos: que ocupen solo nuestro panel */
+#aihub-chat aihub-chat .Chat_wrapper__p90C0,
+#aihub-chat aihub-chat .Chat_container__x4T-U {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
 }
 
 
@@ -191,6 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
+
 
 
 
