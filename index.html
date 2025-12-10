@@ -6,21 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
+    /* --- ESTILO GENERAL --- */
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       margin: 0;
       padding: 0;
       background: #f5f5f5;
       line-height: 1.5;
-     display: flex; 
-      flex-direction: column;
-      align-items: center; 
     }
 
-    .banner-wrapper {
-      width: 90%;
+    /* Contenedor principal centrado */
+    .main-container {
       max-width: 900px;
-      margin-top: 20px;
+      margin: 0 auto;
+      padding: 20px 16px 60px;
+    }
+
+    /* --- BANNER SUPERIOR --- */
+    .banner-wrapper {
       margin-bottom: 25px;
     }
 
@@ -54,12 +57,12 @@
       100% { transform: translateX(-50%); }
     }
 
+    /* --- TARJETA DE TEXTO PRINCIPAL --- */
     .card {
       background: #ffffff;
       border-radius: 1rem;
       padding: 1.5rem;
-      max-width: 900px;
-      width: 90%;
+      width: 100%;
       box-shadow: 0 15px 35px rgba(0,0,0,0.08);
       margin-bottom: 2rem;
     }
@@ -67,6 +70,7 @@
     h1 {
       color: #111827;
       margin-bottom: 0.4rem;
+      font-size: 1.6rem;
     }
 
     .tagline {
@@ -75,13 +79,21 @@
       color: #065f46;
     }
 
+    /* --- GALERÍA EN SU PROPIA TARJETA --- */
+    .gallery-card {
+      background: #ffffff;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      width: 100%;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+    }
+
     .gallery {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 20px;
-      padding: 20px 0;
-      max-width: 900px;
     }
 
     .gallery img {
@@ -96,49 +108,75 @@
     .gallery img:hover {
       transform: scale(1.05);
     }
-#aihub-chat {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 320px;
-  max-width: 90vw;
-  height: 480px;
-  max-height: 80vh;
-  border-radius: 15px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  background-color: #fff;
-  overflow: hidden;
-  z-index: 10000;
-}
+
+    /* --- CHAT FLOTANTE AI HUB / SERENITY --- */
+    #aihub-chat {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 320px;
+      max-width: 90vw;
+      height: 480px;
+      max-height: 80vh;
+      border-radius: 15px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+      background-color: #fff;
+      overflow: hidden;
+      z-index: 10000;
+    }
+
+    /* --- AJUSTES RESPONSIVE --- */
+    @media (max-width: 600px) {
+      .banner {
+        height: auto;
+        padding: 10px 0;
+      }
+
+      .scroll-text span {
+        font-size: 0.8rem;
+        padding-right: 40px;
+      }
+
+      .gallery img {
+        width: 45%;
+        max-width: 160px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <div class="banner-wrapper">
-    <div class="banner">
-      <div class="scroll-text">
-        <span>CONTAMOS CON SISTEMA DE INTELIGENCIA ARTIFICIAL DE ASESORIA EN TIEMPO REAL, 24HS DEL DIA LOS 365 DIAS DEL AÑO, BOT ESPECIALIZADO EN LA VENTA DE REPUESTOS Y SERVICIO DE COTIZACION CON COMPARACION DE ALTERNATIVOS</span>
-        <span>CONTAMOS CON SISTEMA DE INTELIGENCIA ARTIFICIAL DE ASESORIA EN TIEMPO REAL, 24HS DEL DIA LOS 365 DIAS DEL AÑO, BOT ESPECIALIZADO EN LA VENTA DE REPUESTOS Y SERVICIO DE COTIZACION CON COMPARACION DE ALTERNATIVOS</span>
+  <div class="main-container">
+
+    <div class="banner-wrapper">
+      <div class="banner">
+        <div class="scroll-text">
+          <span>CONTAMOS CON SISTEMA DE INTELIGENCIA ARTIFICIAL DE ASESORIA EN TIEMPO REAL, 24HS DEL DIA LOS 365 DIAS DEL AÑO, BOT ESPECIALIZADO EN LA VENTA DE REPUESTOS Y SERVICIO DE COTIZACION CON COMPARACION DE ALTERNATIVOS</span>
+          <span>CONTAMOS CON SISTEMA DE INTELIGENCIA ARTIFICIAL DE ASESORIA EN TIEMPO REAL, 24HS DEL DIA LOS 365 DIAS DEL AÑO, BOT ESPECIALIZADO EN LA VENTA DE REPUESTOS Y SERVICIO DE COTIZACION CON COMPARACION DE ALTERNATIVOS</span>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="card">
-    <h1>catalogoautomotorperu.com</h1>
-    <p class="tagline">Proveedores Oficiales de Repuestos en Peru</p>
+    <div class="card">
+      <h1>catalogoautomotorperu.com</h1>
+      <p class="tagline">Proveedores Oficiales de Repuestos en Peru</p>
 
-    <p>
-      Página de prueba destinada a la creación y evaluación de soluciones
-      digitales relacionadas con el catálogo de repuestos automotor en Peru.
-    </p>
-  </div>
+      <p>
+        Página de prueba destinada a la creación y evaluación de soluciones
+        digitales relacionadas con el catálogo de repuestos automotor en Peru.
+      </p>
+    </div>
 
-  <div class="gallery">
-    <img src="01.png" alt="Repuesto 01">
-    <img src="02.png" alt="Repuesto 02">
-    <img src="03.png" alt="Repuesto 03">
-    <img src="04.png" alt="Repuesto 04">
+    <div class="gallery-card">
+      <div class="gallery">
+        <img src="01.png" alt="Repuesto 01">
+        <img src="02.png" alt="Repuesto 02">
+        <img src="03.png" alt="Repuesto 03">
+        <img src="04.png" alt="Repuesto 04">
+      </div>
+    </div>
+
   </div>
 
   <!-- Contenedor del chat de Serenity -->
@@ -162,9 +200,6 @@
 
 </body>
 </html>
-
-
-
 
 
 
